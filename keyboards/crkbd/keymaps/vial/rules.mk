@@ -13,4 +13,4 @@ COMBO_ENABLE        = yes
 
 QMK_SETTINGS        = yes
 
-SRC += features/achordion.c
+CAPS_WORD_ENABLE = yes

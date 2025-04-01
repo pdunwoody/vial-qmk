@@ -23,7 +23,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VIAL_UNLOCK_COMBO_COLS {0, 1}
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
-#define TAPPING_TERM 200
+
+#define CHORDAL_HOLD
+
+#define PERMISSIVE_HOLD
+#define TAPPING_TERM 250
+
+#define SPLIT_LAYER_STATE_ENABLE
+#define SPLIT_LED_STATE_ENABLE
 
 //#define USE_MATRIX_I2C
 #ifdef KEYBOARD_crkbd_rev1_legacy
@@ -52,5 +59,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
-
-#define ACHORDION_STREAK
