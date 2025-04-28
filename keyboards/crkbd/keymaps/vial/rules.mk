@@ -8,7 +8,7 @@ VIALRGB_ENABLE		= yes
 MOUSEKEY_ENABLE     = yes
 OLED_ENABLE         = yes
 OLED_DRIVER         = ssd1306
-EXTRAKEY_ENABLE     = no
+EXTRAKEY_ENABLE     = yes
 COMBO_ENABLE        = yes
 
 QMK_SETTINGS        = yes

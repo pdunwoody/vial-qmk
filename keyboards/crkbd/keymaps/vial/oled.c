@@ -17,7 +17,7 @@ void oled_render_layer_state(void) {
     oled_write("Base", false);
     break;
   case EXTRA:
-    oled_write("QWERTY", false);
+    oled_write("No HRM", false);
     break;
   case NAV:
     oled_write("Navigation", false);
