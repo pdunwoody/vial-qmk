@@ -7,17 +7,6 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   return rotation;
 }
 
-enum layers {
-    _BASE,
-    _NUMBERS,
-    _EXTRA,
-    _FUNCTION,
-    _SYMBOLS,
-    _NAVIGATION,
-    _MEDIA,
-    _QWERTY
-};
-
 void oled_render_layer_state(void) {
   oled_write("Layer: ", false);
 
@@ -42,6 +31,9 @@ void oled_render_layer_state(void) {
     break;
   case _FUNCTION:
     oled_write("Function", false);
+    break;
+  case _QWERTY:
+    oled_write("No HRM", false);
     break;
   }
 
