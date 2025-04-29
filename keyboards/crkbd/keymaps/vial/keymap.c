@@ -103,64 +103,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
 };
 
-/*Layer and Indicators*/
-bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    /*Set LED's based on active layer*/
-    if (get_highest_layer(layer_state) > 0) {
-        uint8_t layer = get_highest_layer(layer_state);
-
-        for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
-            for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
-                uint8_t index = g_led_config.matrix_co[row][col];
-
-                if (index >= led_min && index < led_max && index != NO_LED && keymap_key_to_keycode(layer, (keypos_t){col,row}) > KC_TRNS) {
-                    switch(layer) {
-                        case 6:
-                            rgb_matrix_set_color(index, 42, 161, 152);
-                            break;
-                        case 5:
-                            rgb_matrix_set_color(index, 108, 113, 196);
-                            break;
-                        case 4:
-                            rgb_matrix_set_color(index, 38, 139, 210);
-                            break;
-                        case 3:
-                            rgb_matrix_set_color(index, 203, 75, 22);
-                            break;
-                        case 2:
-                            rgb_matrix_set_color(index, 211, 54, 130);
-                            break;
-                        case 1:
-                            rgb_matrix_set_color(index, 220, 50, 47);
-                            break;
-                        default:
-                            break;
-                    }
-
-                }
-            }
-        }
-    }
-
-
-    /*Set LEDs on Layer 0 if CAPS is active*/
-    if (host_keyboard_led_state().caps_lock || is_caps_word_on()) {
-        uint8_t layer = 0;
-
-        for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
-            for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
-                uint8_t index = g_led_config.matrix_co[row][col];
-
-                if (index >= led_min && index < led_max && index != NO_LED && keymap_key_to_keycode(layer, (keypos_t){col,row}) > KC_TRNS) {
-                    rgb_matrix_set_color(index, 181, 137, 0);
-                }
-            }
-        }
-    }
-    return false;
-}
-
-
 #ifdef OTHER_KEYMAP_C
 #    include OTHER_KEYMAP_C
 #endif // OTHER_KEYMAP_C
